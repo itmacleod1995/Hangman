@@ -29,10 +29,16 @@ score = 0
 hangman.scoreIs0()
 
 while game:
+    """Prints the corresponding hangman ascii art based on score"""
     if score == 1:
         hangman.scoreIs1()
     elif score == 2:
         hangman.scoreIs2()
+    elif score == 3:
+        hangman.scoreIs3()
+
+
+
     if "".join(word) == wordSelected:
         print("You win!")
         break
