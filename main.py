@@ -1,5 +1,8 @@
 import random
 import hangmans as hangman
+from random_word import RandomWords
+
+r = RandomWords()
 
 print("""
  _                                             
@@ -15,7 +18,8 @@ print("""
 
 """Select random word from list"""
 words = ["chicken", "football", "salad", "tesla"]
-wordSelected = random.choice(words)
+wordSelected = r.get_random_word()
+print(wordSelected)
 word = []
 for letter in wordSelected:
     word.append("_")
@@ -57,7 +61,7 @@ while game:
         print("You already picked that letter!")
     else:
         if letter in wordSelected:
-            print("In word")
+            print("{} is in the word!".format(letter))
             for i in range(len(wordSelected)):
                 if wordSelected[i] == letter:
                     word[i] = letter
