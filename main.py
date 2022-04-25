@@ -1,4 +1,5 @@
 import random
+import hangmans as hangman
 
 print("""
  _                                             
@@ -25,7 +26,13 @@ lettersAlreadyPicked = []
 game = True
 score = 0
 
+hangman.scoreIs0()
+
 while game:
+    if score == 1:
+        hangman.scoreIs1()
+    elif score == 2:
+        hangman.scoreIs2()
     if "".join(word) == wordSelected:
         print("You win!")
         break
