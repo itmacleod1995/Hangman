@@ -26,8 +26,6 @@ lettersAlreadyPicked = []
 game = True
 score = 0
 
-hangman.scoreIs0()
-
 while game:
     """Prints the corresponding hangman ascii art based on score"""
     if score == 1:
@@ -36,7 +34,14 @@ while game:
         hangman.scoreIs2()
     elif score == 3:
         hangman.scoreIs3()
-
+    elif score == 4:
+        hangman.scoreIs4()
+    elif score == 5:
+        hangman.scoreIs5()
+    elif score == 6:
+        hangman.scoreIs6()
+    else:
+        hangman.scoreIs0()
 
 
     if "".join(word) == wordSelected:
@@ -61,5 +66,5 @@ while game:
             score += 1
 
         lettersAlreadyPicked.append(letter)
-
+        print("")
         print("".join(word))
