@@ -1,4 +1,3 @@
-import random
 import hangmans as hangman
 from random_word import RandomWords
 
@@ -17,9 +16,7 @@ print("""
 """)
 
 """Select random word from list"""
-words = ["chicken", "football", "salad", "tesla"]
 wordSelected = r.get_random_word()
-print(wordSelected)
 word = []
 for letter in wordSelected:
     word.append("_")
@@ -53,6 +50,7 @@ while game:
         break
 
     if score == 6:
+        print("The word was {}".format(wordSelected))
         print("You lose!")
         break
 
